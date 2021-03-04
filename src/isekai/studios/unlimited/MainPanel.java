@@ -499,6 +499,7 @@ private ArrayList<SearchMangas> SearchMangasList(String SearchItem){
 //Search Engine for Admin Verification
 
 private ArrayList<AdminGetPerm> getAdminPerms(String User){
+    @SuppressWarnings("unchecked")
     ArrayList<AdminGetPerm> AdminPerm = new ArrayList();
     String query = "SELECT `Admin` FROM `Employees` WHERE 1 AND (Username LIKE '"+User+"')";
     
@@ -733,6 +734,13 @@ public static Connection getConnection(){
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        AddMangaSuccess1 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel56 = new javax.swing.JLabel();
+        AddMangaSucessB1 = new javax.swing.JButton();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
         Admin_BackG = new javax.swing.JLabel();
         AdminDenied = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
@@ -2017,6 +2025,7 @@ public static Connection getConnection(){
         AddEmpB.setFont(new java.awt.Font("Fawn Script 2", 0, 18)); // NOI18N
         AddEmpB.setText("Confirm");
         AddEmpB.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AddEmpB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AddEmpB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddEmpBActionPerformed(evt);
@@ -2060,6 +2069,7 @@ public static Connection getConnection(){
 
         ShowPass.setBackground(AddEmploy.getBackground());
         ShowPass.setText("Show");
+        ShowPass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ShowPass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 ShowPassMousePressed(evt);
@@ -2265,6 +2275,94 @@ public static Connection getConnection(){
         );
 
         AddEmp.add(AddEmpErr, "card3");
+
+        AddMangaSuccess1.setBackground(new Color(0, 0, 0, 0));
+
+        jPanel12.setBackground(new java.awt.Color(76, 76, 76));
+
+        jLabel56.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(102, 255, 51));
+        jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel56.setText("The new employee has");
+
+        AddMangaSucessB1.setBackground(new java.awt.Color(114, 114, 114));
+        AddMangaSucessB1.setForeground(new java.awt.Color(255, 255, 255));
+        AddMangaSucessB1.setText("Ok");
+        AddMangaSucessB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AddMangaSucessB1.setSelected(true);
+        AddMangaSucessB1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddMangaSucessB1ActionPerformed(evt);
+            }
+        });
+        AddMangaSucessB1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                AddMangaSucessB1KeyPressed(evt);
+            }
+        });
+
+        jLabel63.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(51, 255, 0));
+        jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel63.setText("SUCCESS!!");
+
+        jLabel64.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(102, 255, 51));
+        jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel64.setText(" added to the database.");
+
+        jLabel65.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(102, 255, 51));
+        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel65.setText("been successfuly added");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel63, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel64, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(185, 185, 185)
+                .addComponent(AddMangaSucessB1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
+            .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel63)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel56)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel65)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel64)
+                .addGap(18, 20, Short.MAX_VALUE)
+                .addComponent(AddMangaSucessB1)
+                .addGap(33, 33, 33))
+        );
+
+        javax.swing.GroupLayout AddMangaSuccess1Layout = new javax.swing.GroupLayout(AddMangaSuccess1);
+        AddMangaSuccess1.setLayout(AddMangaSuccess1Layout);
+        AddMangaSuccess1Layout.setHorizontalGroup(
+            AddMangaSuccess1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddMangaSuccess1Layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
+        );
+        AddMangaSuccess1Layout.setVerticalGroup(
+            AddMangaSuccess1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddMangaSuccess1Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(160, Short.MAX_VALUE))
+        );
+
+        AddEmp.add(AddMangaSuccess1, "card3");
 
         Import_AdminG.add(AddEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 167, -1, -1));
 
@@ -2565,12 +2663,13 @@ public static Connection getConnection(){
     }//GEN-LAST:event_AddEmpErrBActionPerformed
 
     private void AddEmpErrBKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AddEmpErrBKeyPressed
-                int key=evt.getKeyCode();
+        int key=evt.getKeyCode();
         if(key==10){
             AddEmpErrB.doClick();
         }
     }//GEN-LAST:event_AddEmpErrBKeyPressed
 
+@SuppressWarnings("deprecation")
     private void AddEmpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddEmpBActionPerformed
         int Age;
         String FName, MI, LName, Gender, Country, User, Pass, Repass, Admin;
@@ -3331,6 +3430,33 @@ public static Connection getConnection(){
         Main.revalidate();
     }//GEN-LAST:event_HomeBActionPerformed
 
+    private void AddMangaSucessB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddMangaSucessB1ActionPerformed
+        EntFName.setText("");
+        EntLName.setText("");
+        EntMI.setText("");
+        EntAge.setText("");
+        EntUser.setText("");
+        EntPass.setText("");
+        EntRePass.setText("");
+        EntFName.setText("");
+        EntCountry.setSelectedItem("=Select Your Country=");
+        GenderSelect.clearSelection();
+        AdminSelect.clearSelection();
+        
+        AddEmp.removeAll();
+        AddEmp.add(AddEmploy);
+        AddEmp.repaint();
+        AddEmp.revalidate();
+        
+    }//GEN-LAST:event_AddMangaSucessB1ActionPerformed
+
+    private void AddMangaSucessB1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AddMangaSucessB1KeyPressed
+        int key=evt.getKeyCode();
+        if(key==10){
+            AddMangaSucessB1.doClick();
+        }
+    }//GEN-LAST:event_AddMangaSucessB1KeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -3406,7 +3532,9 @@ public static Connection getConnection(){
     private javax.swing.JLayeredPane AddMangaMain;
     private javax.swing.JPanel AddMangaPan;
     private javax.swing.JPanel AddMangaSuccess;
+    private javax.swing.JPanel AddMangaSuccess1;
     private javax.swing.JButton AddMangaSucessB;
+    private javax.swing.JButton AddMangaSucessB1;
     private javax.swing.JButton Add_AnimeB;
     private javax.swing.JButton Add_MangaB;
     private javax.swing.JToggleButton AdminB;
@@ -3534,6 +3662,7 @@ public static Connection getConnection(){
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
@@ -3541,12 +3670,16 @@ public static Connection getConnection(){
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
