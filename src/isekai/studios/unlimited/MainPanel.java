@@ -23,6 +23,7 @@ package isekai.studios.unlimited;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.lang.*;
+import java.net.URL;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -550,6 +551,12 @@ public static Connection getConnection(){
         this.Main.repaint();
         this.Main.revalidate();
         this.revalidate();
+        this.setTitle("Isekai Studios Unlimited Portal");
+        Toolkit defaultToolkit = Toolkit.getDefaultToolkit();
+        URL imageResource = MainPanel.class.getResource("/res/Images/Icons/Logo/ISU Logo HD.png");
+        Image image = defaultToolkit.getImage(imageResource);
+        
+        this.setIconImage(image);
     }
     
     // </editor-fold>

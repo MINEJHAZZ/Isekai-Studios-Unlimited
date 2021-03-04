@@ -21,6 +21,7 @@ package isekai.studios.unlimited;
  */
 import java.awt.*;
 import java.lang.*;
+import java.net.URL;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,7 +38,7 @@ public static Connection getConnection(){
             con = DriverManager.getConnection(url,"Kbx8dKGuZG","jD48alsLz6");
             System.out.println("Database Connection Successful");
             
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
         
@@ -51,6 +52,13 @@ public static Connection getConnection(){
     public LoginScreen() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("Login");
+        Toolkit defaultToolkit = Toolkit.getDefaultToolkit();
+        URL imageResource = LoginScreen.class.getResource("/res/Images/Icons/Logo/ISU Logo HD.png");
+        Image image = defaultToolkit.getImage(imageResource);
+        
+        this.setIconImage(image);
+        
     }
     
     // </editor-fold>
@@ -454,7 +462,7 @@ public static Connection getConnection(){
         String query = "SELECT * FROM `Employees` WHERE `Username` =? AND `Password` =?";
         String query2 = "UPDATE `CurentLog` SET `LoggedInAs`=?";        
     try {
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        MainPan.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         Confirm.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         ps = LoginScreen.getConnection().prepareStatement(query);
         
@@ -483,7 +491,7 @@ public static Connection getConnection(){
         ErrorNot.setText("An Error has occured while contacting the server please try again.");
         Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
     } finally {
-            this.setCursor(Cursor.getDefaultCursor());
+            MainPan.setCursor(Cursor.getDefaultCursor());
             Confirm.setCursor(Cursor.getDefaultCursor());
     }
     }//GEN-LAST:event_ConfirmActionPerformed
@@ -601,15 +609,12 @@ public static Connection getConnection(){
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LoginScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+    //</editor-fold>
+    //</editor-fold>
+    
         //</editor-fold>
         //</editor-fold>
 
