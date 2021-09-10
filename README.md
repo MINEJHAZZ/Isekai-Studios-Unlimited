@@ -16,3 +16,10 @@ Country list used = https://gist.github.com/kalinchernev/486393efcca01623b18d
 Backgrounds = https://play.google.com/store/apps/details?id=org.contentarcade.apps.logomaker
 
 Others = Netbeans, Photoshop, RemoteSQL
+
+
+
+
+# As of September 11th 2021, this Code is now unusable
+## Reason:
+#### The Remote database that was being used has now been shutdown.
